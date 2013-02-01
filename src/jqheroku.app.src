@@ -8,12 +8,13 @@
   {applications, [
                  kernel
                  ,stdlib
-                 ,lager
                  ,sasl
+                 ,lager
                  ,ranch
                  ,cowboy
+                 ,hackney
+                 ,jiffy
+                 ,jsonpath
                  ]},
-  {env, [
-         {http_listen_port, 8001}
-        ]}
+  {env, []}
  ]}.

@@ -29,7 +29,7 @@ start_link() ->
 %%% Supervisor callbacks
 %%%===================================================================
 
-init([Feeds, Host, DBName, Username, Password, DBPort]) ->
+init([]) ->
     RestartStrategy = one_for_one,
     MaxRestarts = 1000,
     MaxSecondsBetweenRestarts = 3600,
@@ -38,7 +38,7 @@ init([Feeds, Host, DBName, Username, Password, DBPort]) ->
 
     Dispatch = cowboy_router:compile([
                                      %% {HostMatch, list({PathMatch, Handler, Opts})}
-                                     {'_', [{"/", jqheroku_handler, []}]}
+                                     {'_', [{'_', jqheroku_handler, []}]}
                                      ]),
 
     ListenPort = list_to_integer(os:getenv("PORT")),
