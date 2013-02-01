@@ -10,6 +10,6 @@
 #### Use
 
 ```shell
-λ curl "http://<domain>?url=https://gist.github.com/raw/0f6d146cdfb814ab23d9/test.json&expression=$[name=foo]"
-{"name":"foo","age":40}
+λ curl "http://<domain>?url=https://gist.github.com/raw/0f6d146cdfb814ab23d9/test.json&expression=.\[\]\[0\].name"
+"foo"
 ```
