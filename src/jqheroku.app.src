@@ -1,0 +1,19 @@
+%% -*- erlang -*-
+{application, jqheroku,
+ [{description, "Erlang Waloh Server"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {mod, {jqheroku_app, []}},
+  {start_phases, []},
+  {applications, [
+                 kernel
+                 ,stdlib
+                 ,lager
+                 ,sasl
+                 ,ranch
+                 ,cowboy
+                 ]},
+  {env, [
+         {http_listen_port, 8001}
+        ]}
+ ]}.
